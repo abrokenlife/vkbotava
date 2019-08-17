@@ -27,15 +27,20 @@ def main(time):
     i = id['items'][0]['id']
     vk.wall.delete(post_id=i)
 
+
+date = datetime.now()
+d = date.strftime('%H%M')
 while True:
-    date = datetime.now()
-    d = date.strftime('%H%M')
-    if d == "0314":
-        while True:
-            date = datetime.now()
-            d = date.strftime('%H%M')
-            main(d)
-            time.sleep(60)
+    pro = datetime.now()
+    v = pro.strftime('%H%M')
+    if v != d:
+        main(v)
+        date = datetime.now()
+        d = date.strftime('%H%M')
+        time.sleep(40)
+    else:
+        time.sleep(5)
+
 
         
     
